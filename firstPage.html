@@ -1,0 +1,186 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<style>
+
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body{
+	position:relative;
+}
+
+.headerBar{
+	background-color: Orange;
+	margin:0px;
+	text-align: center;
+	position:static;
+}
+
+.searchForm{
+	width:500px;
+	margin: 10px auto;
+	display:inline-block;
+	vertical-align: top;
+}
+
+.searchField{
+	position:relative;
+	left:5px;
+	padding:8px 15px;
+	background-color:white;
+	border: 0px;
+	width:400px;
+}
+
+.searchButton{
+	position:relative;
+	padding: 6px 15px;
+	left:-8px;
+	border:2px solid #207cca;
+	background-color: #207cca;
+	color:#fafafa;
+}
+
+.searchButton:hover{
+	background-color:#fafafa;
+	color:207cca;
+}
+.homeButton{
+	margin:10px;
+	background:transparent;
+	border: none;
+	display: inline-block;
+}
+.userInfo{
+	display: inline-block;
+	position:relative;
+}
+.userName{
+	display: inline-block;
+	position:absolute;
+	top:50%;
+	height:20px;
+	margin-top: -10px;
+	overflow: hidden;
+	width:100px;
+}
+
+.recipeImg:hover{
+    opacity:0.8;
+}
+
+.recipeImage{
+position: relative;
+height:270px;
+width:480px;
+margin:15px;
+overflow:hidden;
+float:left;
+}
+
+.recipeImg{
+position: absolute;
+top:-45px;
+}
+
+.recipeImage:hover button {
+    display: block;
+}
+.recipeImage button {
+    position:absolute;
+    display:none;
+	bottom:5px;
+	background-color:transparent;
+	outline:none;
+	border:none;
+	vertical-align:center;
+	left:216px;
+	top:0px;
+	cursor:pointer;
+}
+
+.overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.modal {
+    width: 600px;
+    height: 365px;
+    line-height: 200px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -300px;
+    background-color: #f1c40f;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11; /* 1px higher than the overlay layer */
+	display: none;
+}
+
+.playFrame
+{
+	margin-bottom: 10px;
+}
+
+.close{
+	background:transparent;
+	border: none;
+	float: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+</style>
+
+<script>
+function openModalWindow() {
+	document.getElementById("modalWindow").style.display = "initial";
+}
+
+function closeModalWindow() {
+	document.getElementById("modalWindow").style.display = "none";
+}
+</script>
+</head>
+
+<body>
+<div class="headerBar">
+	<button class="homeButton" type="button"><img src="spoon-32.png" alt="logo" height="30" width="30"></button>
+	<form class="searchForm">
+		<input class="searchField" type="text" placeholder="Search..." required>
+		<input class="searchButton" type="button" value="Search">
+	</form>
+	<div class="userInfo">
+		<img src="EmmaPicture.jpg" alt="Emma's Picture" height="30" width="30">
+		<span class="userName">Emma Green</span>
+	</div>
+</div>
+
+<div class="overlay">
+	<div class="modal" id="modalWindow">
+		<button class="close" onclick="closeModalWindow()"><img src="x-mark-4-32.png" alt="play" height="24" width="24"></button>
+		<iframe class="playFrame" width="560" height="315" src="https://www.youtube.com/embed/A1XJ8guc5vs" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div class ="recipeImage">
+		<img class="recipeImg" src="http://img.youtube.com/vi/A1XJ8guc5vs/0.jpg" alt="Chicken Nuggets">
+		<button class="play" onclick="openModalWindow()"><img src="play-48.png" alt="play" height="48" width="48"></button>
+	</div>
+	<div class ="recipeImage">
+		<img class="recipeImg" src="http://img.youtube.com/vi/WRDrPfNfcjc/0.jpg" alt="Chicken Nuggets">
+		<button class="play"><img src="play-48.png" alt="play" height="48" width="48"></button>
+	</div>
+</div>
+</body>
+
+</html>
